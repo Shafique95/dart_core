@@ -1,4 +1,4 @@
-void grade(int, mark) {
+void grade(mark) {
 
   if (mark >= 90) {
     print("$mark mark receives A grade");

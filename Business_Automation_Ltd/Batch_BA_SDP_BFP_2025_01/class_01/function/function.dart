@@ -14,9 +14,9 @@ void grade(int, mark) {
 }
 
 void main() {
-  mark(92);
-  mark(61);
-  mark(74);
-  mark(32);
-  mark(87);
+  grade(92);
+  grade(61);
+  grade(74);
+  grade(32);
+  grade(87);
 }

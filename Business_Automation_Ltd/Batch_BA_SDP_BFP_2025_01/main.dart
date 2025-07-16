@@ -1,56 +1,28 @@
-import 'class_01/function/function.dart';
+class Donate {
+  String sender;
+  int amount;
+
+  Donate(this.sender, this.amount);
+
+  void displayDetails() {
+    print('Sender: $sender => Amount: $amount');
+  }
+
+  bool isOverThousand() {
+    return amount >= 1000;
+  }
+
+  String greet(String greeting) {
+    return '$greeting $sender, for donating $amount tk';
+  }
+}
 
 void main() {
-  print("Hello Dart");
-  var retval=returnAvalue();
-  print("Return value is: $retval");
-  // Example usage:
-  Author author = Author(
-      name: "John Doe", email: "john@example.com", address: "123 Street");
-  ManForMan book = ManForMan("The Journey", author, "Blue");
+  var donation1 = Donate('Alice', 10000);
+  var donation2 = Donate('Bob', 100);
 
-  WomanForWoman book2 = WomanForWoman("The Adventure", author, "Red");
-
-  /// Selling books to Library
-  Library library = Library(
-      name: "City Library", address: "456 Avenue", books: [book, book2]);
-
-  print(
-      "Book1: ${book.name}, Author: ${book.author?.name}, Color: ${book.color}");
-  print(
-      "Book2: ${book2.name}, Author: ${book2.author?.name}, Color: ${book2.color}");
-  print("Library: ${library.name}, Address: ${library.address}");
-}
-
-class Author {
-  String? name;
-  String? email;
-  String? address;
-  Author({this.name, this.email, this.address});
-}
-
-class Book {
-  String? name;
-  Author? author;
-  Book(this.name, this.author);
-}
-
-class ManForMan extends Book {
-  String? color;
-
-  ManForMan(String? name, Author? author, this.color) : super(name, author);
-}
-
-class WomanForWoman extends Book {
-  String? color;
-
-  WomanForWoman(super.name, super.author, this.color);
-}
-
-class Library {
-  String? name;
-  String? address;
-  List<Book>? books; // Need 100 books to this lib
-
-  Library({this.name, this.address, this.books});
+  donation1.displayDetails();
+  donation1.isOverThousand() ? print(donation1.greet('Thank You')):'';
+  donation2.displayDetails();
+  donation2.isOverThousand() ? print(donation2.greet('Thank You')):'';
 }

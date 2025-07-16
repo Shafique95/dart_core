@@ -1,43 +1,38 @@
-var name = 10;
-
-// Strongly typed variable
-// camelCasevar age = 30;
-// myName() => "John Doe";
-// country name >>>> // countryName;
-/// for all class , variables, functions, methods, etc. use camelCase
-
 void main() {
-  // int, double, bool, String, List, Map, Set, dynamic
-  String empName = "John Doe";
-  empName = "Kamal Hossain"; // Reassigning a new value
-  print("Hello, $empName");
-  print(name);
-   Person("Alice", 25);
-   Person("Bob", 30);
-}
+  // int
+  int age = 25;
+  print('Age: $age');
 
-// some keywords in dart are
-// abstract, assert, async, await, break, case, catch, class, const, continue, moset popular keywords are
-class Person {
-  // scope of class variables is within the class
-  String? name; // class fields or class vaiables or class properties
-  int? age;
+  // double
+  double height = 5.9;
+  print('Height: $height');
 
-  Person(name, age){
-    // Constructor to initialize the class variables
-    print("Person created: $name, Age: $age");
+  // bool
+  bool isStudent = true;
+  print('Is Student: $isStudent');
 
-  }
-  /// Method to display person's information
-  void sdfsdfsf() {
-    print("Name: $name, Age: $age");
-  }
-}
-// block
-// {
-// block of code
+  // String
+  String name = 'John Doe';
+  print('Name: $name');
 
-// }
-void printMyname() {
-  name;
+  // List
+  List<String> fruits = ['Apple', 'Banana', 'Orange'];
+  print('Fruits: $fruits');
+
+  // Map
+  Map<String, int> grades = {'Math': 90, 'Science': 85, 'English': 88};
+  print('Grades: $grades');
+
+
+  // Set
+  Set<int> uniqueNumbers = {1, 2, 3, 4, 3, 2};
+  print('Unique Numbers: $uniqueNumbers');
+
+  // dynamic
+  dynamic dynamicValue = 'Hello';
+  print('Dynamic Value (String): $dynamicValue');
+  dynamicValue = 42;
+  print('Dynamic Value (int): $dynamicValue');
+  dynamicValue = 3.14;
+  print('Dynamic Value (double): $dynamicValue');
 }

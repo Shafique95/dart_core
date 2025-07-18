@@ -20,6 +20,9 @@ void main() {
   print(
       "Book2: ${book2.name}, Author: ${book2.author?.name}, Color: ${book2.color}");
   print("Library: ${library.name}, Address: ${library.address}");
+
+  Person person1 = Person("Alice", 25);
+  person1.displayInfo();
 }
 
 class Author {
@@ -27,6 +30,19 @@ class Author {
   String? email;
   String? address;
   Author({this.name, this.email, this.address});
+}
+
+class Person {
+  String? name;
+  int? age;
+
+  Person(this.name, this.age) {
+    print("Person created: $name, Age: $age");
+  }
+
+  void displayInfo() {
+    print("Name: $name, Age: $age");
+  }
 }
 
 class Book {

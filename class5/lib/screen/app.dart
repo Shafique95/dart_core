@@ -1,4 +1,5 @@
 
+import 'package:class5/screen/user_form_handling.dart';
 import 'package:flutter/material.dart';
 import 'package:class5/screen/my_home_page.dart';
 class MyApp extends StatelessWidget {
@@ -12,13 +13,14 @@ class MyApp extends StatelessWidget {
     // var appTitle='Amirul'; /// immutable state ... String data
     // const is  key word
     return MaterialApp(
+      debugShowCheckedModeBanner:false ,
       title: 'Flutter Demo',
       theme: ThemeData(
 
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         useMaterial3: true,
       ),
-      home:  MyHomePage(title: appTitle,),
+      home:  const UserFormHandling(),
     );
   }
 }

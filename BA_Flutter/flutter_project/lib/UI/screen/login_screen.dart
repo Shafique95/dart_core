@@ -1,6 +1,9 @@
+import 'dart:convert';
+
 import 'package:flutter/material.dart';
 import 'package:flutter_project/UI/model/data/user_model.dart';
 import 'package:flutter_project/UI/screen/profile_screen.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
 class LoginScreen extends StatefulWidget {
   const LoginScreen({super.key});
@@ -114,15 +117,15 @@ class _LoginScreenState extends State<LoginScreen> {
     UserModel userModel = UserModel(
         name: _nameTEController.text.trim(),
         email: _emailTEController.text.trim(),
-        password: _passwordTEController.text);
+        password: _passwordTEController.text, login: 'LoggedIn');
 
     if (_key.currentState!.validate()) {
-      Navigator.push(
-          context,
-          MaterialPageRoute(
-              builder: (context) => ProfileScreen(
-                    userModel: userModel,
-                  ))).then((_) {
+      saveUserInfo(userModel);
+      Navigator.pushAndRemoveUntil(
+        context,
+        MaterialPageRoute(
+          builder: (context) => ProfileScreen(),
+        ), (_) => false,).then((_) {
         _nameTEController.clear();
         _emailTEController.clear();
         _passwordTEController.clear();
@@ -136,5 +139,12 @@ class _LoginScreenState extends State<LoginScreen> {
     _passwordTEController.dispose();
     _emailTEController.dispose();
     super.dispose();
+  }
+  
+  Future<void> saveUserInfo(UserModel user) async {
+    SharedPreferences sharedPreferences =await SharedPreferences.getInstance();
+    final userJson = jsonEncode(user.toJson());
+    sharedPreferences.setString('user', userJson);
+    
   }
 }

@@ -1,6 +1,7 @@
-import 'package:class5/model/user_register_model.dart';
-import 'package:class5/screen/user_form_handling.dart';
+
 import 'package:flutter/material.dart';
+
+import '../model/user_register_model.dart';
 
 class MyHomePage extends StatefulWidget {
   const MyHomePage({super.key, this.title, required this.userRegisterModel});

@@ -1,7 +1,6 @@
 
-import 'package:class5/screen/user_form_handling.dart';
 import 'package:flutter/material.dart';
-import 'package:class5/screen/my_home_page.dart';
+import 'user_form_handling.dart';
 class MyApp extends StatelessWidget {
  final String? appTitle;
 

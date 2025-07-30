@@ -1,6 +1,6 @@
-import 'package:class5/model/user_register_model.dart';
 import 'package:flutter/material.dart';
 
+import '../model/user_register_model.dart';
 import 'my_home_page.dart';
 
 class UserFormHandling extends StatefulWidget {

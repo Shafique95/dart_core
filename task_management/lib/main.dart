@@ -1,11 +1,6 @@
-
-
-import 'package:Taskia/screen/app.dart';
 import 'package:flutter/material.dart';
+import 'package:Taskia/core/app.dart';
 
 void main() {
-  var appTitle ="Class 05";
-  runApp(  MyApp(appTitle:appTitle));
+  runApp(const TaskManagementApp());
 }
-
-
